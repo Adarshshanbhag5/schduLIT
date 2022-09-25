@@ -5,7 +5,7 @@ import { useFirestoreContext } from "../../context/FirestoreContext";
 import Spinner from "../../loaders/Spinner";
 import styles from "../../styles/Home.module.css";
 
-export default function index() {
+export default function Index() {
   const [input, setInput] = useState("");
   function inputhandler(e) {
     setInput(e.target.value);
