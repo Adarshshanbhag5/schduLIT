@@ -1,0 +1,32 @@
+.form {
+  box-shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.1);
+  padding: 3rem 2.5rem;
+  margin: 3rem 0;
+}
+
+.email__ph__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.email__div,
+.phone__div {
+  flex: 0 1 45%;
+}
+
+@media (max-width: 630px) {
+  .form {
+    padding: 2.5rem 1.5rem;
+    margin-inline: 0.5rem;
+  }
+
+  .email__ph__container {
+    flex-direction: column;
+  }
+
+  .email__div,
+  .phone__div {
+    width: 100%;
+  }
+}

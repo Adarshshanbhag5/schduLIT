@@ -1,0 +1,17 @@
+.search__container {
+  background-color: #4a0094;
+  padding: 3rem 2rem 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-size: 18px;
+  max-width: 960px;
+  width: 100%;
+}
