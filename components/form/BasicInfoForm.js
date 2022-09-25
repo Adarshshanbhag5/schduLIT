@@ -51,6 +51,7 @@ export default function BasicInfoForm({ formData, setFormData }) {
         <input
           type="text"
           id="organiser"
+          value={formData.organiser}
           onChange={inputHandler}
           onKeyUp={keyUpHandler}
           placeholder="Tell attendees who is organising this event"
@@ -105,6 +106,7 @@ export default function BasicInfoForm({ formData, setFormData }) {
             id="phone"
             placeholder="Phone number"
             required
+            value={formData.phone}
             onChange={inputHandler}
             onKeyUp={keyUpHandler}
           />

@@ -20,13 +20,14 @@ export default function Index() {
       <section className={styles.ongoing__event__container}>
         <div className={styles.ongoing__event__head}>All events</div>
         <div className={styles.events__grid}>
-          {data?.map((item, index) => (
+          {data?.map((item) => (
             <Card
-              title={item.event_title}
-              date={item.event_start_date}
-              time={item.event_start_time}
-              img={item.event_banner}
-              key={index}
+              title={item.data.event_title}
+              date={item.data.event_start_date}
+              time={item.data.event_start_time}
+              img={item.data.event_banner}
+              key={item.id}
+              id={item.id}
             />
           ))}
         </div>

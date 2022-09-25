@@ -8,7 +8,11 @@ export default function Preview({ formData }) {
     <div className={styles.container}>
       <h1>Preview of your event</h1>
       <div className={styles.hero}>
-        <img src="/assets/advaya.jpg" alt="" className={styles.hero__img} />
+        <img
+          src={URL.createObjectURL(formData.event_banner)}
+          alt=""
+          className={styles.hero__img}
+        />
       </div>
       <main className={styles.event__detail__container}>
         <div className={styles.event__detail__left}>

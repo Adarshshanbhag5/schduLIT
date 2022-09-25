@@ -14,10 +14,10 @@ export function FirestoreProvider({ children }) {
     const unsub = onSnapshot(q, (querysnapshot) => {
       let responseData = [];
       querysnapshot.forEach((doc) => {
-        responseData.push(doc.data());
-        setLoading(false);
+        responseData.push({ data: doc.data(), id: doc.id });
       });
       setData(responseData);
+      setLoading(false);
     });
     return () => unsub();
   }, []);

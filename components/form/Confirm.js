@@ -11,7 +11,10 @@ export default function Confirm({ formData, stepHandler }) {
   const [loading, setLoading] = useState(false);
   const route = useRouter();
   async function uploadImage(data) {
-    const imgRef = ref(storage, `eventImage/${data.event_banner.name}`);
+    const imgRef = ref(
+      storage,
+      `eventImage/${Math.floor(Math.random() * 1000)}${data.event_banner.name}`
+    );
     const formDbRef = doc(collection(db, "events"));
     try {
       setLoading(true);

@@ -3,15 +3,12 @@ import Card from "../components/Card";
 import SearchBar from "../components/SearchBar";
 import data, { closedData, onGoingData } from "../data";
 import styles from "../styles/Home.module.css";
-import { useFirestoreContext } from "../context/FirestoreContext";
 
 export default function Home() {
   const [input, setInput] = useState("");
   function inputhandler(e) {
     setInput(e.target.value);
   }
-  const { data, loading } = useFirestoreContext();
-  console.log(data);
   return (
     <>
       <SearchBar input={input} handler={inputhandler} />

@@ -21,24 +21,6 @@ a {
   padding: 0;
 }
 
-.btn {
-  padding: 0.8rem 1.2rem;
-  margin: 0 1rem;
-  border-radius: 50px;
-  font-weight: 600;
-  background-color: #eb5757;
-  cursor: pointer;
-  border: none;
-  font-size: 18px;
-  color: #fff;
-  scale: 1;
-  transition: scale 0.2s ease;
-}
-
-.btn:hover {
-  scale: 1.03;
-}
-
 abbr,
 a {
   display: block;

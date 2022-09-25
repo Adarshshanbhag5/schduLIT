@@ -1,9 +1,14 @@
+import { useRouter } from "next/router";
 import React from "react";
 import styles from "../styles/Card.module.css";
-export default function Card({ title, img, date, time, closed, featured }) {
+export default function Card({ title, img, date, time, closed, featured, id }) {
+  const router = useRouter();
   return (
     <article
       className={featured ? `${styles.card} ${styles.featured}` : styles.card}
+      onClick={() => {
+        router.push(`/events/${id}`);
+      }}
     >
       {closed ? (
         <div className={styles.ribbon}>

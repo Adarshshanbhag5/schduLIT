@@ -11,6 +11,10 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordCnfRef = useRef();
   const nameRef = useRef();
+  const regexRef = useRef({
+    email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+    password: /^[a-zA-Z0-9!@#$%^&*]{6,16}$/,
+  });
   const route = useRouter();
   const { signUp, loading } = useAuthContext();
 
@@ -30,6 +34,20 @@ export default function Signup() {
     }
   }
 
+  function formValidation(field, regex) {
+    if (regex.test(field.value)) {
+      field.className = "valid__formfield";
+      setValidForm(true);
+    } else {
+      field.className = "invalid__formfield";
+      setValidForm(false);
+    }
+  }
+
+  function keyUpHandler(e) {
+    formValidation(e.target, regexRef.current[e.target.id]);
+  }
+
   if (loading) {
     return <Spinner />;
   }
@@ -47,10 +65,12 @@ export default function Signup() {
               <input
                 type="email"
                 id="email"
+                onKeyUp={keyUpHandler}
                 required
                 placeholder="Enter your email"
                 ref={emailRef}
               />
+              <p className="validation__info">Email must be valid address</p>
             </div>
             <div className="emailCnf__div">
               <label htmlFor="emailCnf">Confirm your email</label>
@@ -67,10 +87,14 @@ export default function Signup() {
               <input
                 type="password"
                 id="password"
+                onKeyUp={keyUpHandler}
                 required
                 placeholder="Create a password"
                 ref={passwordRef}
               />
+              <p className="validation__info">
+                Password must contain atleast 6 characters max 16
+              </p>
             </div>
             <div className="passwordCnf__div">
               <label htmlFor="passwordCnf">Confirm your password</label>

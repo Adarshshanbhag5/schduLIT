@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import BasicInfo from "../components/form/BasicInfo";
 import Confirm from "../components/form/Confirm";
 import Details from "../components/form/Details";
-import EventDetailForm from "../components/form/EventDetailForm";
-import EventQuillForm from "../components/form/EventQuillForm";
-import UserDetailForm from "../components/form/UserDetailForm";
 import styles from "../styles/AddEvent.module.css";
 
 export default function AddEvent() {
@@ -19,7 +16,7 @@ export default function AddEvent() {
     event_start_time: "",
     event_end_time: "",
     event_banner: null,
-    event_venue: "",
+    event_venue: "online",
     event_price: "",
     quillValue: "",
   });

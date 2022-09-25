@@ -8,6 +8,9 @@
 
 .event__image__div {
   transition: box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .event__image__div:hover {
@@ -33,6 +36,7 @@
   background-color: #fff;
   border-radius: 4px;
   border: 2px solid rgb(169, 168, 179);
+  border-radius: 5px;
   text-align: center;
   white-space: nowrap;
   font-size: 0.875rem;
@@ -40,8 +44,26 @@
   padding: 12px 8px;
 }
 
+.event__image__div:hover .upload__text {
+  z-index: 10;
+}
+
+.image__preview {
+  position: absolute;
+  inset: 0;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 1/0.4;
+}
+
 @media (max-width: 680px) {
   .event__image__div label {
+    aspect-ratio: 1/0.5;
+  }
+
+  .image__preview {
     aspect-ratio: 1/0.5;
   }
 }

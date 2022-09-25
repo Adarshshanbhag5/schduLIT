@@ -14,6 +14,10 @@
   align-items: center;
 }
 
+.event__detail__container {
+  align-items: flex-start;
+}
+
 .hero {
   position: relative;
   padding: 2.5rem 0 0 0;
@@ -127,6 +131,8 @@
 .event__details__right {
   flex: 0 1 30%;
   margin-left: 1.5rem;
+  position: sticky;
+  top: 85px;
 }
 
 .event__register__container {

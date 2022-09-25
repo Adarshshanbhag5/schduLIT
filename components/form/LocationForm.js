@@ -12,7 +12,7 @@ export default function LocationForm({ formData, setFormData }) {
   function changeHandler(e) {
     if (e.target.checked) {
       setLoactionType(e.target.value);
-      // setFormData((prevData) => ({ ...prevData, [e.target.id]: e.target.value }));
+      setFormData((prevData) => ({ ...prevData, event_venue: e.target.value }));
     }
   }
   function inputHandler(e) {

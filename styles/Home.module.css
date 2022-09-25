@@ -5,11 +5,13 @@
 }
 
 .ongoing__event__head {
-  font-weight: 600;
+  font-weight: bold;
   text-align: center;
   font-size: 36px;
   margin: 1rem;
   margin-bottom: 1.5rem;
+  color: #1e0a3c;
+  text-transform: uppercase;
 }
 .events__grid {
   display: grid;
