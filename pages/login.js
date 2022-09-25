@@ -6,7 +6,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { useRouter } from "next/router";
 import Spinner from "../loaders/Spinner";
 
-export default function login() {
+export default function Login() {
   const [validForm, setValidForm] = useState(false);
   const emailRef = useRef();
   const passwordRef = useRef();

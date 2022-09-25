@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/AuthContext";
 import Spinner from "../loaders/Spinner";
 import styles from "../styles/Login.module.css";
 
-export default function signup() {
+export default function Signup() {
   const emailRef = useRef();
   const emailCnfRef = useRef();
   const passwordRef = useRef();
