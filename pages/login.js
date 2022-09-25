@@ -100,7 +100,9 @@ export default function Login() {
             >
               Login
             </button>
-            <div className={styles.login__link}>Don't Have an account?</div>
+            <div className={styles.login__link}>
+              Don&apos;t Have an account?
+            </div>
             <Link href="/signup">
               <button className="form-btn">Sign up</button>
             </Link>

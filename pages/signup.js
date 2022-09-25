@@ -43,7 +43,7 @@ export default function Signup() {
           <div className={styles.manual__signUp__container}>
             <h2>Sign up with your email address</h2>
             <div className="email__div">
-              <label htmlFor="email">What's your email?</label>
+              <label htmlFor="email">What&apos;s your email?</label>
               <input
                 type="email"
                 id="email"
