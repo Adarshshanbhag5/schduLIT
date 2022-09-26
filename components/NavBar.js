@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useAuthContext } from "../context/AuthContext";
 import styles from "../styles/NavBar.module.css";
 
@@ -9,6 +9,7 @@ export default function NavBar() {
   const route = useRouter();
   const [menu, setMenu] = useState(false);
   const [dropDown, setDropDown] = useState(false);
+  const mobileNav = useRef();
   function burgerClickHandler() {
     setMenu(!menu);
   }
@@ -31,9 +32,19 @@ export default function NavBar() {
               ? `${styles.navbar__right__active} ${styles.navbar__right}`
               : `${styles.navbar__right}`
           }
+          ref={mobileNav}
         >
           <Link href="/events">
-            <div className={styles.navbar__right__text}>Browse Events</div>
+            <div
+              className={styles.navbar__right__text}
+              onClick={() => {
+                if (mobileNav.current.clientWidth === 350) {
+                  burgerClickHandler();
+                }
+              }}
+            >
+              Browse Events
+            </div>
           </Link>
           <button
             className={`form-btn ${styles.event__add__btn}`}
@@ -42,6 +53,9 @@ export default function NavBar() {
                 route.push("/addevent");
               } else {
                 route.replace("/login");
+              }
+              if (mobileNav.current.clientWidth === 350) {
+                burgerClickHandler();
               }
             }}
           >
@@ -58,7 +72,16 @@ export default function NavBar() {
             </div>
           ) : (
             <Link href="/login">
-              <div className={styles.navbar__right__text}>Login</div>
+              <div
+                className={styles.navbar__right__text}
+                onClick={() => {
+                  if (mobileNav.current.clientWidth === 350) {
+                    burgerClickHandler();
+                  }
+                }}
+              >
+                Login
+              </div>
             </Link>
           )}
           {currentUser && (

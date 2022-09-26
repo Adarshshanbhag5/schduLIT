@@ -25,11 +25,11 @@ export default function Preview({ formData }) {
               <div className={styles.organiser__name}>{formData.organiser}</div>
               <abbr title="email address">
                 <span className={styles.email}>Email:</span>
-                <a href="mailto: adarshshanbhag5@gmail.com">{formData.email}</a>
+                <a href={`mailto: ${formData.email}`}>{formData.email}</a>
               </abbr>
               <abbr title="phone number">
                 <span className={styles.phone}>Phone:</span>
-                <a href="tel:+919845606575">{formData.phone}</a>
+                <a href={`tel:+91${formData.phone}`}>{formData.phone}</a>
               </abbr>
             </div>
           </div>

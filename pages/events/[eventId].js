@@ -29,7 +29,7 @@ export default function EventDetail() {
         <div className={styles.hero}>
           <img
             src={eventData[0]?.data.event_banner}
-            alt=""
+            alt="event image"
             className={styles.hero__img}
           />
         </div>
@@ -48,13 +48,15 @@ export default function EventDetail() {
                 </div>
                 <abbr title="email address">
                   <span className={styles.email}>Email:</span>
-                  <a href="mailto: adarshshanbhag5@gmail.com">
+                  <a href={`mailto: ${eventData[0]?.data.email}`}>
                     {eventData[0]?.data.email}
                   </a>
                 </abbr>
                 <abbr title="phone number">
                   <span className={styles.phone}>Phone:</span>
-                  <a href="tel:+919845606575">{eventData[0]?.data.phone}</a>
+                  <a href={`tel:+91${eventData[0]?.data.phone}`}>
+                    {eventData[0]?.data.phone}
+                  </a>
                 </abbr>
               </div>
             </div>
