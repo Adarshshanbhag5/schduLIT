@@ -30,7 +30,7 @@ export default function Signup() {
       await signUp(email, name, password);
       route.replace("/");
     } else {
-      alert("Error occured...");
+      alert("password or email does not match");
     }
   }
 

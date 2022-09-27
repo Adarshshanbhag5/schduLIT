@@ -5,7 +5,9 @@ export default function Card({ title, img, date, time, closed, featured, id }) {
   const router = useRouter();
   return (
     <article
-      className={featured ? `${styles.card} ${styles.featured}` : styles.card}
+      className={
+        featured === 0 ? `${styles.card} ${styles.featured}` : styles.card
+      }
       onClick={() => {
         router.push(`/events/${id}`);
       }}

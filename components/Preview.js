@@ -55,7 +55,7 @@ export default function Preview({ formData }) {
                 </svg>
                 <div className={styles.address__text__div}>
                   <h3>Date and Time</h3>
-                  <p>22 Oct 2022</p>
+                  <p>{formData.event_start_date}</p>
                 </div>
               </div>
               <div className={styles.location}>

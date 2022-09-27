@@ -14,7 +14,15 @@ export function FirestoreProvider({ children }) {
     const unsub = onSnapshot(q, (querysnapshot) => {
       let responseData = [];
       querysnapshot.forEach((doc) => {
-        responseData.push({ data: doc.data(), id: doc.id });
+        let event_closed = false;
+        if (
+          new Date(
+            `${doc.data().event_end_date}T${doc.data().event_end_time}:00`
+          ) < new Date()
+        ) {
+          event_closed = true;
+        }
+        responseData.push({ data: doc.data(), id: doc.id, event_closed });
       });
       setData(responseData);
       setLoading(false);

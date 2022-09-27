@@ -46,7 +46,7 @@ export default function Confirm({ formData, stepHandler }) {
   }
 
   if (loading) {
-    return <Spinner />;
+    return <Spinner message={"Please wait..."} />;
   }
   return (
     <div className={styles.container}>
