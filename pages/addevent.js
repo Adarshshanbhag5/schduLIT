@@ -46,6 +46,10 @@ export default function AddEvent() {
       setStep((prevStep) => prevStep - 1);
     }
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [step]);
   return (
     <div className={styles.container}>
       <h1 className={styles.head}>Create event</h1>
